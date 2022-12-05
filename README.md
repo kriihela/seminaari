@@ -26,7 +26,7 @@ Swift on Applen kehittämä ohjelmointikieli, jota käytetään pääasiassa iOS
 
 Minulla ei ole aikaisempaa kokemusta Swiftistä, mutta se on kiinnostanut minua jo jonkin aikaa. Tämä kurssi antoi hyvän mahdollisuuden viimeinkin tutustua sen perusteisiin. Ensiksi minun piti asentaa Xcode, joka on Applen kehittämä kehitysympäristö, joka pitää sisällään kaiken tarvittavan Swiftillä kehittämiseen. Se on saatavilla vain Macille. Ohjelma on melko raskas ja se vie tilaa reilu 10 gigaa. Muillakin ohjelmilla voi kirjoittaa Swiftiä, mutta Xcode on yleisesti suositeltavin, sillä se sisältää kaiken tarvittavan valmiiksi.
 
-<img src="https://github.com/kriihela/seminaari/blob/main/kuvat/xcode.png" alt="xcode" width="400"/>
+<img src="https://github.com/kriihela/seminaari/blob/main/kuvat/xcode.png" alt="xcode" width="800"/>
 
 Xcode näytti alkuun melko sekavalta, koska ominaisuuksia on tarjolla paljon. Jouduinkin alkuun opiskelemaan, mitä kaikkea ohjelma tarjoaa. Päädyin lopulta luomaan uuden iOS-projektin, sillä alkuperäinen React Nativella tehty to do -lista oli luonnollisesti mobiiliohjelma. Tämän jälkeen pääsin koodaamaan, tai siis katselemaan Youtube-videoita Swiftillä koodaamisesta sekä lukemaan Swiftin dokumentaatiota ja tekemään niiden pohjalta koodia. Esimerkkejä löytyi paljon, mutta niissä oli useita erilaisia tapoja tehdä sama asia. Moni tuntui käyttävän Xcoden käyttöliittymän graafisia ominaisuuksia koodaamiseen, mutta halusin itse tehdä kaiken tekstieditorilla.
 
