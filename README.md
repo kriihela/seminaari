@@ -161,14 +161,16 @@ Koodi toimi moitteettomasti Applen uusimmalla iPhone 14 Pro -laitteella.
 Koodi toimi iPad Airilla, mutta ulkoasu poikkesi odotetusta. Tämä johtui bodyn NavigationView-rakenteesta. Ulkoasu näytti enemmän siltä kuin pitikin, kun NavigationView poistettiin.
 
 <img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-mac.png" alt="todo-mac" width="400"/>
-Koodi ei toiminut, koska MacOS ei tue navigationBarTitleDisplayMode-metodia. Metodin poistettaessa koodi toimi osittain, mutta tehtäviä ei voinut lisätä. Ulkoasu myös poikkesi odotetusta.
+Koodi ei toiminut Macilla, koska MacOS ei tue navigationBarTitleDisplayMode-metodia. Metodin poistettaessa koodi toimi osittain, mutta tehtäviä ei voinut lisätä. Ulkoasu myös poikkesi odotetusta.
 
 <img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-apple-watch.png" alt="todo-apple-watch" width="400"/>
 Koodi toimi moitteettomasti Applen uusimmalla Apple Watch Series 8 -laitteella.
 
 ## Yhteenveto <a name = "yhteenveto"></a>
 
-Plaaplaa
+Swift vaikuttaa olevan hyvä ohjelmointikieli Applen laitteille. Koodin opiskelu sujui hyvin, sillä tarjolla oli selkeitä ohjeita. Itse koodi poikkesi JavaScriptistä, mutta se vaikutti matalan kynnyksen kieleltä oppia. Se on myös monien lähteiden mukaan nopea ja tehokas kieli, mutta tämä ei ollut kunnolla testattavissa näin yksinkertaisessa sovelluksessa. Erilaisia kirjastoja tuntui olevan tarjolla. SwiftUI tuntui tarjoavan kehittäjille hyvän työkalun hienon, Applen tuotteisiin sopivan käyttöliittymän luomiseen.
+
+Mobiililaitteilla koodi toimi moitteettomasti ilman koodin muokkaamista. Hieman yllätyksenä tuli, että koodi ei toiminut Macilla, eikä Apple TV:llä. Olin ollut siinä uskossa, että SwiftUI toimisi kaikilla Applen laitteilla moitteettomasti. Tästä huolimatta Swift vaikuttaa järkevältä valinnalta ohjelmointikielenä Applen laitteille. Esimerkiksi alkuperäistä React Native -sovellusta en olisi voinut ajaa suoraan muilla laitteilla kuin iPhonella. Muita laitteita varten olisi pitänyt ladata erilaisia työkaluja ja kirjastoja, sekä muokata koodia. Yritin huvikseni asentaa React Nativeen työkalut Apple Watchia varten, mutta onnistuneen asennuksen sijaan sain kasan virheviestejä, joita minulla ei ollut aikaa lähteä ratkomaan. Xcoden ja Swiftin kanssa tämän kaltaisia ongelmia ei ole, vaan kehitys voidaan aloittaa heti.
 
 ## Lähteet <a name = "lahteet"></a>
 
