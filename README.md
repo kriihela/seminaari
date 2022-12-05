@@ -12,7 +12,7 @@ Tämän seminaarin aiheena on to do -lista, joka on käännetty JavaScriptistä 
 
 ## Swift <a name = "swift"></a>
 
-Swift on Applen kehittämä ohjelmointikieli, jota käytetään pääasiassa iOS-, iPadOS- ja macOS-käyttöjärjestelmien sovellusten kehittämiseen. Se on moderni, suorituskykyinen ja helposti luettava kieli, joka tarjoaa monia tehokkaita työkaluja sovellusten kehittämiseen. Swift perustuu ohjelmointikieli Objective-C:hen, joka on vanha, mutta edelleen suosittu kieli Applen ohjelmistokehityksessä. Sen kehitti Brad Cox ja Tom Love. Swiftin tarkoituksena on korvata Objective-C Applen ohjelmistokehityksessä. Swift on avoimen lähdekoodin kieli, joten sitä kehitetään jatkuvasti Applen sekä yhteisön avustuksella ja se on saatavilla kaikille ilmaiseksi.
+Swift on Applen kehittämä ohjelmointikieli, jota käytetään pääasiassa iOS-, iPadOS- ja macOS-käyttöjärjestelmien sovellusten kehittämiseen. Se on moderni, suorituskykyinen ja helposti luettava kieli, joka tarjoaa monia tehokkaita työkaluja sovellusten kehittämiseen. Swift perustuu ohjelmointikieli Objective-C:hen, joka on vanha, mutta edelleen suosittu kieli Applen ohjelmistokehityksessä. Sen kehitti 80-luvulla Brad Cox ja Tom Love. Swiftin tarkoituksena on korvata Objective-C Applen ohjelmistokehityksessä. Swift on avoimen lähdekoodin kieli, joten sitä kehitetään jatkuvasti Applen sekä yhteisön avustuksella ja se on saatavilla kaikille ilmaiseksi.
 
 ## Xcode <a name = "xcode"></a>
 
@@ -146,7 +146,7 @@ Kuten koodista voi huomata, se on hyvin erilaista verrattuna JavaScriptiin. Synt
 
 Koodi ajettiin sellaisenaan Applen eri laitteilla.
 
-Apple TV:ssä koodi ei toiminut, koska SwiftUI ei ole tuettu Applen TV-laitteissa.
+Apple TV:ssä koodi ei toiminut, koska SwiftUI ei ole tuettu Apple TV-laitteissa.
 
 // TODO kuva iPhone 14 Pro
 Koodi toimi moitteettomasti Applen uusimmalla iPhone 14 Pro -laitteella.
