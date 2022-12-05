@@ -5,8 +5,16 @@
 - [Lyhyesti](#lyhyesti)
 - [Swift](#swift)
 - [Xcode](#xcode)
+- [To do -lista](#todo)
+  - [Alkuperäinen koodi](#reactnative)
+  - [Kääntäminen Swiftiin](#swiftkoodi)
+- [Koodin toimiminen Applen laitteilla](#laitteet)
+- [Yhteenveto](#yhteenveto)
+- [Lähteet](#lahteet)
 
 ## Lyhyesti <a name = "lyhyesti"></a>
+
+<img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-expo.png" alt="todo" width="400"/>
 
 Tämän seminaarin aiheena on to do -lista, joka on käännetty JavaScriptistä Swiftiin. Kyseessä on vanha React Native -koulutehtävä, jonka pyrin tekemään mahdollisimman samanlaiseksi kuin alkuperäinen. Listalle voi lisätä tehtäviä ja ne voidaan poistaa. Tarkoituksenani on selvittää, miten paljon Swift eroaa JavaScriptistä ja kuinka hyvin Swiftin koodi toimii Applen eri laitteissa.
 
@@ -18,13 +26,13 @@ Swift on Applen kehittämä ohjelmointikieli, jota käytetään pääasiassa iOS
 
 Minulla ei ole aikaisempaa kokemusta Swiftistä, mutta se on kiinnostanut minua jo jonkin aikaa. Tämä kurssi antoi hyvän mahdollisuuden viimeinkin tutustua sen perusteisiin. Ensiksi minun piti asentaa Xcode, joka on Applen kehittämä kehitysympäristö, joka pitää sisällään kaiken tarvittavan Swiftillä kehittämiseen. Se on saatavilla vain Macille. Ohjelma on melko raskas ja se vie tilaa reilu 10 gigaa. Muillakin ohjelmilla voi kirjoittaa Swiftiä, mutta Xcode on yleisesti suositeltavin, sillä se sisältää kaiken tarvittavan valmiiksi.
 
-TODO kuva
+<img src="https://github.com/kriihela/seminaari/blob/main/kuvat/xcode.png" alt="xcode" width="400"/>
 
 Xcode näytti alkuun melko sekavalta, koska ominaisuuksia on tarjolla paljon. Jouduinkin alkuun opiskelemaan, mitä kaikkea ohjelma tarjoaa. Päädyin lopulta luomaan uuden iOS-projektin, sillä alkuperäinen React Nativella tehty to do -lista oli luonnollisesti mobiiliohjelma. Tämän jälkeen pääsin koodaamaan, tai siis katselemaan Youtube-videoita Swiftillä koodaamisesta sekä lukemaan Swiftin dokumentaatiota ja tekemään niiden pohjalta koodia. Esimerkkejä löytyi paljon, mutta niissä oli useita erilaisia tapoja tehdä sama asia. Moni tuntui käyttävän Xcoden käyttöliittymän graafisia ominaisuuksia koodaamiseen, mutta halusin itse tehdä kaiken tekstieditorilla.
 
 ## To do -lista <a name = "todo"></a>
 
-### Alkuperäinen React Native -app, joka käännetään Swiftiin
+### Alkuperäinen React Native -app, joka käännetään Swiftiin <a name = "reactnative"></a>
 
 ```
 const [input, setInput] = useState('');
@@ -77,7 +85,7 @@ Tämä (lisää linkki tiedostoon) yksinkertainen koodi oli pohjana to do -lista
 
 Return-lause palauttaa käyttäjälle näkyvän listan tehtävistä, sekä inputin, johon käyttäjä voi syöttää uuden tehtävän ja nappulat lisäämistä ja poistamista varten.
 
-### Kääntäminen Swiftiin
+### Kääntäminen Swiftiin <a name = "swiftkoodi"></a>
 
 SwiftUI ja Combine -kirjastot tarjoavat työkaluja ja rajapintoja, joita käytetään sovelluksen luomiseen. Task-structiin on määritelty tehtävän nimi ja tunniste. TaskStore on tehtävien tallentamiseen tarkoitettu taulukko. ObservableObjectin avulla muutokset näkyvät automaattisesti.
 
@@ -142,28 +150,26 @@ Lopuksi määritellään ContentView_Previews-struct, joka sisältää esikatsel
 
 Kuten koodista voi huomata, se on hyvin erilaista verrattuna JavaScriptiin. Syntaksi ja käytännöt eroavat toisistaan. JavaScript on dynaaminen ohjelmointikieli, jossa muuttujien tyyppiä ei tarvitse määritellä ennalta. Swiftissä taas muuttujien tyypit on määriteltävä ennalta, jotta koodi toimisi oikein.
 
-## Koodin toimiminen Applen laitteilla
+## Koodin toimiminen Applen laitteilla <a name = "laitteet"></a>
 
-Koodi ajettiin sellaisenaan Applen eri laitteilla.
+Koodi ajettiin sellaisenaan Applen eri laitteilla. Apple TV:ssä koodi ei toiminut, koska SwiftUI ei ole tuettu Apple TV-laitteissa. Myös Macilla oli ongelmia.
 
-Apple TV:ssä koodi ei toiminut, koska SwiftUI ei ole tuettu Apple TV-laitteissa.
-
-// TODO kuva iPhone 14 Pro
+<img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-iphone.png" alt="todo-iphone" width="400"/>
 Koodi toimi moitteettomasti Applen uusimmalla iPhone 14 Pro -laitteella.
 
-// TODO kuva iPad Air (5th generation)
-Koodi toimi, mutta ulkoasu poikkesi odotetusta. Tämä johtui bodyn NavigationView-rakenteesta. Ulkoasu näytti enemmän siltä kuin pitikin, kun NavigationView poistettiin.
+<img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-ipad.png" alt="todo-ipad" width="400"/>
+Koodi toimi iPad Airilla, mutta ulkoasu poikkesi odotetusta. Tämä johtui bodyn NavigationView-rakenteesta. Ulkoasu näytti enemmän siltä kuin pitikin, kun NavigationView poistettiin.
 
-// TODO kuva Macbook Air (Intel)
-Koodi ei toiminut, koska MacOS ei tue navigationBarTitleDisplayMode-metodia. Ulkoasu myös poikkesi odotetusta.
+<img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-mac.png" alt="todo-mac" width="400"/>
+Koodi ei toiminut, koska MacOS ei tue navigationBarTitleDisplayMode-metodia. Metodin poistettaessa koodi toimi osittain, mutta tehtäviä ei voinut lisätä. Ulkoasu myös poikkesi odotetusta.
 
-// TODO kuva Apple Watch Series 8 (45 mm)
+<img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-apple-watch.png" alt="todo-apple-watch" width="400"/>
 Koodi toimi moitteettomasti Applen uusimmalla Apple Watch Series 8 -laitteella.
 
-## Yhteenveto
+## Yhteenveto <a name = "yhteenveto"></a>
 
 Plaaplaa
 
-## Lähteet
+## Lähteet <a name = "lahteet"></a>
 
 Plaaplaa
