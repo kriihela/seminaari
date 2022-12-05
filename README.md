@@ -1,4 +1,4 @@
-# Yksinkertainen to do -lista Swiftillä
+# Yksinkertainen To Do -lista Swiftillä
 
 ## Sisältö
 
@@ -20,7 +20,7 @@ Minulla ei ole aikaisempaa kokemusta Swiftistä, mutta se on kiinnostanut minua 
 
 TODO kuva
 
-Xcode näytti alkuun melko sekavalta, koska ominaisuuksia on tarjolla paljon. Jouduinkin alkuun opiskelemaan, mitä kaikkea ohjelma tarjoaa. Päädyin lopulta luomaan uuden iOS-projektin, sillä alkuperäinen React Nativella tehty to do -lista oli luonnollisesti mobiiliohjelma. Tämän jälkeen pääsin koodaamaan, tai siis katselemaan Youtube-videoita Swiftillä koodaamisesta sekä lukemaan Swiftin dokumentaatiota. Esimerkkejä löytyi paljon, mutta niissä oli useita erilaisia tapoja tehdä sama asia. Moni tuntui käyttävän Xcoden käyttöliittymän graafisia ominaisuuksia koodaamiseen, mutta halusin itse tehdä kaiken tekstieditorilla.
+Xcode näytti alkuun melko sekavalta, koska ominaisuuksia on tarjolla paljon. Jouduinkin alkuun opiskelemaan, mitä kaikkea ohjelma tarjoaa. Päädyin lopulta luomaan uuden iOS-projektin, sillä alkuperäinen React Nativella tehty to do -lista oli luonnollisesti mobiiliohjelma. Tämän jälkeen pääsin koodaamaan, tai siis katselemaan Youtube-videoita Swiftillä koodaamisesta sekä lukemaan Swiftin dokumentaatiota ja tekemään niiden pohjalta koodia. Esimerkkejä löytyi paljon, mutta niissä oli useita erilaisia tapoja tehdä sama asia. Moni tuntui käyttävän Xcoden käyttöliittymän graafisia ominaisuuksia koodaamiseen, mutta halusin itse tehdä kaiken tekstieditorilla.
 
 ## To do -lista <a name = "todo"></a>
 
@@ -79,4 +79,91 @@ Return-lause palauttaa käyttäjälle näkyvän listan tehtävistä, sekä input
 
 ### Kääntäminen Swiftiin
 
-SwiftUI ja Combine -kirjastot tarjoavat työkaluja ja rajapintoja, joita käytetään sovelluksen luomiseen.
+SwiftUI ja Combine -kirjastot tarjoavat työkaluja ja rajapintoja, joita käytetään sovelluksen luomiseen. Task-structiin on määritelty tehtävän nimi ja tunniste. TaskStore on tehtävien tallentamiseen tarkoitettu taulukko. ObservableObjectin avulla muutokset näkyvät automaattisesti.
+
+```
+import SwiftUI
+import Combine
+
+struct Task : Identifiable {
+    var id = String()
+    var newTask = String()
+}
+
+class TaskStore : ObservableObject {
+    @Published var task = [Task]()
+}
+```
+
+Seuraavaksi määritellään ContentView-struct, joka sisältää käyttöliittymän ulkoasun ja toiminnallisuuden. VStack-rakenne luo pystysuuntaisen tilan käyttöliittymään. Siihen sisältyy tekstikenttä, nappi ja lista, jonka forEach-rakenteella käydään läpi taskStore-taulukko. HStack-rakenne luo vaakasuuntaisen tilan, johon sisältyy tekstikenttä ja nappi.
+
+```
+struct ContentView: View {
+    @ObservedObject var taskStore = TaskStore()
+    @State var newNewTask : String=""
+    
+    var searchBar : some View {
+        HStack{
+            TextField("Insert New Task", text: self.$newNewTask)
+            Button(action: self.addNewNewTask, label: {Text("Add")})
+    }}
+    func addNewNewTask () {
+        taskStore.task.append(Task(id:String(taskStore.task.count + 1 ), newTask: newNewTask))
+        self.newNewTask = ""
+    }
+    var body: some View {
+        NavigationView {
+            VStack {
+                searchBar.padding()
+                List {
+                    ForEach(self.taskStore.task) {
+                        task in
+                        HStack {
+                            Text(task.newTask)
+                            Spacer()
+                            Button(action: {
+                                self.taskStore.task.removeAll(where: {$0.id == task.id})
+                            }, label: {Image(systemName: "trash")})
+            }}}}
+                .navigationTitle("To Do List")
+                .navigationBarTitleDisplayMode(.inline)
+}}}
+```
+
+Lopuksi määritellään ContentView_Previews-struct, joka sisältää esikatselunäkymän ContentView-structin sisällöstä. Struct on PreviewProvider-rakenne, joten se sisältää static var previews-ominaisuuden, jonka sisällä voidaan määritellä esikatselunäkymän sisältö. Tässä tapauksessa esikatselunäkymä sisältää ContentView-structin sisällön.
+
+```
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
+    }
+```
+
+Kuten koodista voi huomata, se on hyvin erilaista verrattuna JavaScriptiin. Syntaksi ja käytännöt eroavat toisistaan. JavaScript on dynaaminen ohjelmointikieli, jossa muuttujien tyyppiä ei tarvitse määritellä ennalta. Swiftissä taas muuttujien tyypit on määriteltävä ennalta, jotta koodi toimisi oikein.
+
+## Koodin toimiminen Applen laitteilla
+
+Koodi ajettiin sellaisenaan Applen eri laitteilla.
+
+Apple TV:ssä koodi ei toiminut, koska SwiftUI ei ole tuettu Applen TV-laitteissa.
+
+// TODO kuva iPhone 14 Pro
+Koodi toimi moitteettomasti Applen uusimmalla iPhone 14 Pro -laitteella.
+
+// TODO kuva iPad Air (5th generation)
+Koodi toimi, mutta ulkoasu poikkesi odotetusta. Tämä johtui bodyn NavigationView-rakenteesta. Ulkoasu näytti enemmän siltä kuin pitikin, kun NavigationView poistettiin.
+
+// TODO kuva Macbook Air (Intel)
+Koodi ei toiminut, koska MacOS ei tue navigationBarTitleDisplayMode-metodia. Ulkoasu myös poikkesi odotetusta.
+
+// TODO kuva Apple Watch Series 8 (45 mm)
+Koodi toimi moitteettomasti Applen uusimmalla Apple Watch Series 8 -laitteella.
+
+## Yhteenveto
+
+Plaaplaa
+
+## Lähteet
+
+Plaaplaa
