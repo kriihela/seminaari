@@ -155,15 +155,19 @@ Koodi löytyy kokonaisuudessaan [täältä](https://github.com/kriihela/seminaar
 Koodi ajettiin sellaisenaan Applen eri laitteilla. Apple TV:ssä koodi ei toiminut, koska `SwiftUI` ei ole tuettu Apple TV-laitteissa. Myös Macilla oli ongelmia.
 
 <img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-iphone.png" alt="todo-iphone" width="400"/>
+
 Koodi toimi moitteettomasti Applen uusimmalla iPhone 14 Pro -laitteella.
 
 <img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-ipad.png" alt="todo-ipad" width="400"/>
+
 Koodi toimi iPad Airilla, mutta ulkoasu poikkesi odotetusta. Tämä johtui bodyn `NavigationView` -rakenteesta. Ulkoasu näytti enemmän siltä kuin pitikin, kun `NavigationView` poistettiin.
 
 <img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-mac.png" alt="todo-mac" width="400"/>
+
 Koodi ei toiminut Macilla, koska MacOS ei tue `navigationBarTitleDisplayMode` -metodia. Metodin poistettaessa koodi toimi osittain, mutta tehtäviä ei voinut lisätä. Ulkoasu myös poikkesi odotetusta.
 
 <img src="https://github.com/kriihela/seminaari/blob/main/kuvat/todo-apple-watch.png" alt="todo-apple-watch" width="400"/>
+
 Koodi toimi moitteettomasti Applen uusimmalla Apple Watch Series 8 -laitteella.
 
 ## Yhteenveto <a name = "yhteenveto"></a>
